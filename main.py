@@ -15,7 +15,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    pygame.display.fill((0, 0, 0))
+    screen.fill((0, 0, 0))
     pygame.display.flip()
 
 
