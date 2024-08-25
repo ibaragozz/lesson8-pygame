@@ -103,6 +103,16 @@ def draw_score():
     right_text = font.render(str(score_right), True, WHITE)
     screen.blit(right_text, (WIDTH * 3 // 4, 20))
 
+# Функция для отображения сообщения о победе
+def show_winner(winner):
+    screen.fill(GREEN)
+    winner_text = font.render(f"Выиграл {winner}", True, WHITE)
+    score_text = font.render(f"Итоговый счет: {score_left} - {score_right}", True, WHITE)
+    screen.blit(winner_text, (WIDTH // 2 - winner_text.get_width() // 2, HEIGHT // 2 - 100))
+    screen.blit(score_text, (WIDTH // 2 - score_text.get_width() // 2, HEIGHT // 2 + 50))
+    pygame.display.flip()
+    pygame.time.wait(3000)  # Показать сообщение 3 секунды
+
 # Функция для отображения меню
 def show_menu():
     menu_font = pygame.font.Font(None, 74)
@@ -150,6 +160,13 @@ def game_loop():
         keys = pygame.key.get_pressed()
         move_paddles(keys)
         move_ball()
+
+        if score_left == 5:
+            show_winner("Синий")
+            return
+        if score_right == 5:
+            show_winner("Красный")
+            return
 
         draw_field()
         screen.blit(ball_img, ball)
