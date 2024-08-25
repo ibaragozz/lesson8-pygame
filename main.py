@@ -143,7 +143,7 @@ def game_loop():
 
     while True:
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT and score_right or score_left == 5:
                 pygame.quit()
                 sys.exit()
 
