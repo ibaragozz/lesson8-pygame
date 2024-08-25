@@ -12,8 +12,8 @@ pygame.display.set_caption("Ping-Pong Game")
 # Цвета
 WHITE = (255, 255, 255)
 GREEN = (0, 128, 0)
-BLUE = (0, 0, 255)
-RED = (255, 0, 0)
+BLUE = (77, 244, 246)
+RED = (238, 82, 73)
 YELLOW = (255, 255, 0)
 
 # Параметры игры
